@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>940181776399-gkmd1tea7o7nf9tgb79iqhn7448a20b5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.940181776399-gkmd1tea7o7nf9tgb79iqhn7448a20b5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCe82ao-R0nFPlWwZKMZ6KoRLBbGCXy5FE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>940181776399</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.isabelle.Terwagne.FilmClubCannes</string>
+	<key>PROJECT_ID</key>
+	<string>filmclubcannes</string>
+	<key>STORAGE_BUCKET</key>
+	<string>filmclubcannes.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:940181776399:ios:cb1dd9e8e0d0c29c</string>
+	<key>DATABASE_URL</key>
+	<string>https://filmclubcannes.firebaseio.com</string>
+</dict>
+</plist>
