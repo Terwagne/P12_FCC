@@ -27,7 +27,6 @@
 		CD87535D22EBB14E00C1B367 /* AgendaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87535C22EBB14E00C1B367 /* AgendaTableViewController.swift */; };
 		CD87535F22EC53E500C1B367 /* AgendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87535E22EC53E500C1B367 /* AgendaTableViewCell.swift */; };
 		CD87536122EF576300C1B367 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87536022EF576300C1B367 /* Time.swift */; };
-		CD87536522F22A7C00C1B367 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87536422F22A7C00C1B367 /* Date.swift */; };
 		CF67ECBC81C029153A06FB84 /* Pods_FilmClubCannes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C25E5DB6C8A7829F5449E07 /* Pods_FilmClubCannes.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +68,6 @@
 		CD87535C22EBB14E00C1B367 /* AgendaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaTableViewController.swift; sourceTree = "<group>"; };
 		CD87535E22EC53E500C1B367 /* AgendaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaTableViewCell.swift; sourceTree = "<group>"; };
 		CD87536022EF576300C1B367 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
-		CD87536422F22A7C00C1B367 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		D10061A607FD3818C2903FAC /* Pods-FilmClubCannesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmClubCannesTests.release.xcconfig"; path = "Target Support Files/Pods-FilmClubCannesTests/Pods-FilmClubCannesTests.release.xcconfig"; sourceTree = "<group>"; };
 		E1E7B4A6429DB5A01D3409EC /* Pods_FilmClubCannesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilmClubCannesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -168,7 +166,6 @@
 				CD50407B22E86E5600D73990 /* Movies.swift */,
 				CD31785F22E8E64200A41CE2 /* SnapshotExtension.swift */,
 				CD87536022EF576300C1B367 /* Time.swift */,
-				CD87536422F22A7C00C1B367 /* Date.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,7 +378,6 @@
 				CD87536122EF576300C1B367 /* Time.swift in Sources */,
 				CD50406E22E84C7900D73990 /* ApiProtocol.swift in Sources */,
 				CD50407622E85C3400D73990 /* ApiKeys.swift in Sources */,
-				CD87536522F22A7C00C1B367 /* Date.swift in Sources */,
 				CD50407C22E86E5600D73990 /* Movies.swift in Sources */,
 				CD50406A22E84BBF00D73990 /* ApiServices.swift in Sources */,
 				CD31786022E8E64200A41CE2 /* SnapshotExtension.swift in Sources */,

@@ -43,7 +43,6 @@ class DetailAgendaViewController: UIViewController {
 
     override func viewDidLoad() {
         super .viewDidLoad()
-    
     }
     
    
@@ -57,11 +56,7 @@ class DetailAgendaViewController: UIViewController {
 
         guard let mov = mov else {return}
         titleLabel.text = mov.title
-      dateLabel.text = mov.date
-//        let date =  mov.date
-//        let newDate = convertStringDateToDate(stringDate: date)
-//        dateLabel.text = "\(newDate)"
-      
+        dateLabel.text = mov.date
         heureLabel.text = mov.heure
         placeLabel.text = mov.place
         directorLabel.text = "Réal. " + mov.director
@@ -86,46 +81,55 @@ class DetailAgendaViewController: UIViewController {
         }
         
     }
-//    func convertStringDateToDate(stringDate: String) -> Date {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "EEEE dd MMMM yyyy"
-//        formatter.locale = Locale(identifier: "FR")
-//        let dateFormatted: Date = formatter.date(from: stringDate)!
-//        return dateFormatted
-//    }
-    
-//    @IBAction func calendarButton(_ sender: UIButton) {
-//        addEventToCalendar(title: (mov?.title)!, description: mov?.place, startDate: newDate!, endDate: newDate!)
-//    }
+    func convertStringDateToDate(stringDate: String) -> Date {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.dateFormat = "EEEE dd MMM yyyy"
+        formatter.locale = Locale(identifier: "fr_FR")
+        let dateFormatted: Date = formatter.date(from: stringDate)!
+        return dateFormatted
+    }
+//    convertStringDateToDate(stringDate: "Mardi 10 Septembre 2019")
+
+    @IBAction func calendarButton(_ sender: UIButton) {
+        newDate = convertStringDateToDate(stringDate: (mov?.date)!)
+       
+        print(newDate as Any)
+        addEventToCalendar(title: (mov?.title)!, description: mov?.place, startDate: newDate!, endDate: newDate!)
+    }
     
     
     
        
-//    func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
-//        DispatchQueue.global(qos: .background).async { () -> Void in
-//            let eventStore = EKEventStore()
-//
-//            eventStore.requestAccess(to: .event, completion: { (granted, error) in
-//                if (granted) && (error == nil) {
-//                    let event = EKEvent(eventStore: eventStore)
-//                    event.title = self.mov?.title
-//                    event.startDate = self.newDate
-//                    event.endDate = self.newDate
-//                    event.notes = self.mov?.place
-//                    event.calendar = eventStore.defaultCalendarForNewEvents
-//                    do {
-//                        try eventStore.save(event, span: .thisEvent)
-//                    } catch let e as NSError {
-//                        completion?(false, e)
-//                        return
-//                    }
-//                    completion?(true, nil)
-//                } else {
-//                    completion?(false, error as NSError?)
-//                }
-//            })
-//        }
-//    }
+    func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
+        DispatchQueue.global(qos: .background).async { () -> Void in
+            let eventStore = EKEventStore()
+
+            eventStore.requestAccess(to: .event, completion: { (granted, error) in
+                if (granted) && (error == nil) {
+                    let event = EKEvent(eventStore: eventStore)
+                    event.title = self.mov?.title
+                    event.startDate = self.newDate
+                    event.endDate = self.newDate
+                    event.notes = self.mov?.place
+                    event.calendar = eventStore.defaultCalendarForNewEvents
+                    do {
+                        try eventStore.save(event, span: .thisEvent)
+                    } catch let e as NSError {
+                        completion?(false, e)
+                        print("error")
+                        return
+                       
+                    }
+                    completion?(true, nil)
+                    print("saveEvent")
+                } else {
+                    completion?(false, error as NSError?)
+                    
+                }
+            })
+        }
+    }
             }
 
 

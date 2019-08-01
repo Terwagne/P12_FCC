@@ -16,4 +16,14 @@ extension Int {
     }
 }
 
-
+extension Date  {
+    func convertStringDateToDate(stringDate: String) -> Date {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.dateFormat = "EEEE dd MMM yyyy"
+        formatter.locale = Locale(identifier: "fr_FR")
+        let dateFormatted: Date = formatter.date(from: stringDate)!
+        return dateFormatted
+    }
+    
+}

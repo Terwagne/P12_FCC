@@ -40,9 +40,6 @@ class AgendaTableViewCell: UITableViewCell {
             titleLabel.text = mov?.title
             directorLabel.text = "de \(mov?.director ?? "")"
             dateLabel.text = mov?.date
-//            guard let date =  mov?.date else {return}
-//            let newDate = convertStringDateToDate(stringDate: date)
-//            dateLabel.text = "\(newDate)"
             heureLabel.text = mov?.heure
             placeLabel.text = mov?.place
             guard let image = mov?.image else {return}

@@ -4,6 +4,10 @@
 <dict>
 	<key>NSCalendarsUsageDescription</key>
 	<string>This application need to access to calendar</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string></string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
