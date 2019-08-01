@@ -11,6 +11,7 @@ import FirebaseFirestore
 import FirebaseStorage
 import Alamofire
 import EventKit
+import EventKitUI
 
 
 class DetailAgendaViewController: UIViewController {
@@ -84,13 +85,19 @@ class DetailAgendaViewController: UIViewController {
     func convertStringDateToDate(stringDate: String) -> Date {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
+        formatter.timeStyle = .none
         formatter.dateFormat = "EEEE dd MMM yyyy"
         formatter.locale = Locale(identifier: "fr_FR")
+        formatter.timeZone = TimeZone(abbreviation: "CET")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
         let dateFormatted: Date = formatter.date(from: stringDate)!
         return dateFormatted
     }
 //    convertStringDateToDate(stringDate: "Mardi 10 Septembre 2019")
 
+
+    
+    
     @IBAction func calendarButton(_ sender: UIButton) {
         newDate = convertStringDateToDate(stringDate: (mov?.date)!)
        
@@ -111,7 +118,8 @@ class DetailAgendaViewController: UIViewController {
                     event.title = self.mov?.title
                     event.startDate = self.newDate
                     event.endDate = self.newDate
-                    event.notes = self.mov?.place
+                    event.location = self.mov?.place
+                  
                     event.calendar = eventStore.defaultCalendarForNewEvents
                     do {
                         try eventStore.save(event, span: .thisEvent)
@@ -123,6 +131,12 @@ class DetailAgendaViewController: UIViewController {
                     }
                     completion?(true, nil)
                     print("saveEvent")
+                    let eventController = EKEventEditViewController()
+                    eventController.event = event
+                    eventController.eventStore = eventStore
+                    eventController.editViewDelegate = self
+                    self.present(eventController, animated: true, completion: nil)
+                    print(self.newDate as Any)
                 } else {
                     completion?(false, error as NSError?)
                     
@@ -130,6 +144,14 @@ class DetailAgendaViewController: UIViewController {
             })
         }
     }
-            }
+    
+}
+extension DetailAgendaViewController: EKEventEditViewDelegate {
+    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    
+}
 
 
