@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3AFA12DA3E15E957CEE3F310 /* Pods_FilmClubCannesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E7B4A6429DB5A01D3409EC /* Pods_FilmClubCannesTests.framework */; };
 		CD2C5EA722F71E7F00126320 /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C5EA622F71E7F00126320 /* InformationsViewController.swift */; };
+		CD2C5EA922F73AA500126320 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C5EA822F73AA500126320 /* LocationViewController.swift */; };
 		CD2CB0D822F37B420088023D /* EventCalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2CB0D722F37B410088023D /* EventCalendarManager.swift */; };
 		CD31785C22E89D2600A41CE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD31785B22E89D2600A41CE2 /* GoogleService-Info.plist */; };
 		CD31786022E8E64200A41CE2 /* SnapshotExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31785F22E8E64200A41CE2 /* SnapshotExtension.swift */; };
@@ -48,6 +49,7 @@
 		661F7A327D2BEFF562C366F9 /* Pods-FilmClubCannes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmClubCannes.debug.xcconfig"; path = "Target Support Files/Pods-FilmClubCannes/Pods-FilmClubCannes.debug.xcconfig"; sourceTree = "<group>"; };
 		9EE377A295AD588A4522ADA8 /* Pods-FilmClubCannesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmClubCannesTests.debug.xcconfig"; path = "Target Support Files/Pods-FilmClubCannesTests/Pods-FilmClubCannesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD2C5EA622F71E7F00126320 /* InformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
+		CD2C5EA822F73AA500126320 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		CD2CB0D722F37B410088023D /* EventCalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCalendarManager.swift; sourceTree = "<group>"; };
 		CD31785B22E89D2600A41CE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD31785F22E8E64200A41CE2 /* SnapshotExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotExtension.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				CD50406522E7A62E00D73990 /* DetailAgendaViewController.swift */,
 				CD87535C22EBB14E00C1B367 /* AgendaTableViewController.swift */,
 				CD2C5EA622F71E7F00126320 /* InformationsViewController.swift */,
+				CD2C5EA822F73AA500126320 /* LocationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				CD50406A22E84BBF00D73990 /* ApiServices.swift in Sources */,
 				CD31786022E8E64200A41CE2 /* SnapshotExtension.swift in Sources */,
 				CD87535F22EC53E500C1B367 /* AgendaTableViewCell.swift in Sources */,
+				CD2C5EA922F73AA500126320 /* LocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

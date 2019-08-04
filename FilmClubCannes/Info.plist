@@ -8,6 +8,8 @@
 	<string></string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
+	<key>NSLocationUsageDescription</key>
+	<string></string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

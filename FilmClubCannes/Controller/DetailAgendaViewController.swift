@@ -117,7 +117,9 @@ class DetailAgendaViewController: UIViewController {
 }
     
     func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
-        DispatchQueue.global(qos: .background).async { () -> Void in
+        DispatchQueue.main.async { () -> Void in
+            
+//            DispatchQueue.global(qos: .background).async { () -> Void in
             let eventStore = EKEventStore()
             
             eventStore.requestAccess(to: .event, completion: { (granted, error) in
@@ -155,9 +157,19 @@ class DetailAgendaViewController: UIViewController {
         
     }
 
+    @IBAction func getLocation(_ sender: UIButton) {
     
+//self.performSegue(withIdentifier: "location", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let segueName = "location"
+        if segue.identifier == segueName {
+            let movieDetailVC = segue.destination as? LocationViewController
+            movieDetailVC!.movies = movies
+            movieDetailVC!.mov = mov
+    }
 }
-
+}
 extension DetailAgendaViewController: EKEventEditViewDelegate {
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         controller.dismiss(animated: true, completion: nil)
