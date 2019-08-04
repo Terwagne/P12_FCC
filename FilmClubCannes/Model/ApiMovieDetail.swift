@@ -61,7 +61,7 @@ struct Genre: Codable {
 // MARK: - ProductionCompany
 struct ProductionCompany: Codable {
     let id: Int
-    let logoPath: JSONNull?
+    let logoPath: String?
     let name, originCountry: String
     
     enum CodingKeys: String, CodingKey {

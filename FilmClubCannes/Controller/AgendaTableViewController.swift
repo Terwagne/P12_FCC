@@ -35,14 +35,16 @@ class AgendaTableViewController: UIViewController {
         getMovies()
         tableView.reloadData()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 
     func getMovies() {
 //        let storage = Storage.storage()
 //        let storageRef = storage.reference()
 //        let imageRef = storageRef.child("images")
         let db = Firestore.firestore()
-        db.collection("movies").order(by: "Id").getDocuments { (snapshot, error) in
+        db.collection("movies").order(by: "id").getDocuments { (snapshot, error) in
             if error != nil {
                 print ("error")
             }else{
@@ -99,10 +101,10 @@ extension  AgendaTableViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        let id = movies![indexPath.row].Tmbd
-           print("requestSearchForMovies")
+        let id = movies![indexPath.row].tmdb
+           print("requestSearchForMoviesWithID")
                 toggleActivityIndicator(shown: true)
-        apiServices.searchMovieDetail(id: id){ (success, apiMovieDetail) in
+            apiServices.searchMovieDetail(id: id){ (success, apiMovieDetail) in
             if success {
                 print("success")
                 guard let apiMovieDetail = apiMovieDetail else {return}

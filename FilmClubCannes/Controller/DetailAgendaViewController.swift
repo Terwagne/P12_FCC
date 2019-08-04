@@ -15,20 +15,20 @@ import EventKitUI
 
 
 class DetailAgendaViewController: UIViewController {
-  
+    
     //MARK: Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var directorLabel: UILabel!
-
+    
     @IBOutlet weak var placeLabel: UILabel!
     
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var anneeLabel: UILabel!
     @IBOutlet weak var dureeLabel: UILabel!
     
-   
+    
     @IBOutlet weak var synopsisTextView: UITextView!
     
     @IBOutlet weak var heureLabel: UILabel!
@@ -41,36 +41,43 @@ class DetailAgendaViewController: UIViewController {
     var movies: [Movies]?
     var mov: Movies?
     var newDate: Date?
-
+    
     override func viewDidLoad() {
         super .viewDidLoad()
+//        displayMovie()
     }
     
-   
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         displayMovie()
     }
-        
+    
     func displayMovie() {
         print(mov as Any)
-
+        
         guard let mov = mov else {return}
         titleLabel.text = mov.title
         dateLabel.text = mov.date
         heureLabel.text = mov.heure
         placeLabel.text = mov.place
         directorLabel.text = "Réal. " + mov.director
-       
+        
         
         guard let movieDetail = apiMovieDetail else {return}
-    
+      
         let time = movieDetail.runtime.convertIntToTime
         dureeLabel.text = time
+        
+        
         synopsisTextView.text = movieDetail.overview
+    
         guard let productionCountry = movieDetail.productionCountries.first?.name else {return}
         countryLabel.text = productionCountry
+        
+   
         anneeLabel.text = movieDetail.releaseDate
+  
         let image = movieDetail.posterPath
         let stringUrl = "https://image.tmdb.org/t/p/w500/\(image)"
         guard let url = URL(string: stringUrl) else {return}
@@ -78,10 +85,12 @@ class DetailAgendaViewController: UIViewController {
             let data = try? Data(contentsOf: url)
             DispatchQueue.main.async {
                 self.photoImage.image = UIImage(data: data! as Data)
-    }
+            }
         }
-        
+
     }
+
+    
     func convertStringDateToDate(stringDate: String) -> Date {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -93,25 +102,24 @@ class DetailAgendaViewController: UIViewController {
         let dateFormatted: Date = formatter.date(from: stringDate)!
         return dateFormatted
     }
-//    convertStringDateToDate(stringDate: "Mardi 10 Septembre 2019")
-
-
+    
+    
+    
     
     
     @IBAction func calendarButton(_ sender: UIButton) {
-        newDate = convertStringDateToDate(stringDate: (mov?.date)!)
-       
+        guard let mov = mov else {return}
+        newDate = convertStringDateToDate(stringDate: (mov.date))
         print(newDate as Any)
-        addEventToCalendar(title: (mov?.title)!, description: mov?.place, startDate: newDate!, endDate: newDate!)
+        if let newDate = newDate {
+        addEventToCalendar(title: (mov.title), description: mov.place, startDate: newDate, endDate: newDate)
     }
+}
     
-    
-    
-       
     func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
         DispatchQueue.global(qos: .background).async { () -> Void in
             let eventStore = EKEventStore()
-
+            
             eventStore.requestAccess(to: .event, completion: { (granted, error) in
                 if (granted) && (error == nil) {
                     let event = EKEvent(eventStore: eventStore)
@@ -119,7 +127,6 @@ class DetailAgendaViewController: UIViewController {
                     event.startDate = self.newDate
                     event.endDate = self.newDate
                     event.location = self.mov?.place
-                  
                     event.calendar = eventStore.defaultCalendarForNewEvents
                     do {
                         try eventStore.save(event, span: .thisEvent)
@@ -127,7 +134,6 @@ class DetailAgendaViewController: UIViewController {
                         completion?(false, e)
                         print("error")
                         return
-                       
                     }
                     completion?(true, nil)
                     print("saveEvent")
@@ -139,18 +145,23 @@ class DetailAgendaViewController: UIViewController {
                     print(self.newDate as Any)
                 } else {
                     completion?(false, error as NSError?)
-                    
                 }
             })
         }
     }
     
+    
+    @IBAction func getInformations(_ sender: Any) {
+        
+    }
+
+    
 }
+
 extension DetailAgendaViewController: EKEventEditViewDelegate {
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
     
 }
 
