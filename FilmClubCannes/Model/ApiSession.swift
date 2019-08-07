@@ -10,7 +10,6 @@ import Foundation
 import Alamofire
 
 class ApiSession: ApiProtocol {
-    
     func request(url: URL, completionHandler: @escaping (DataResponse<Any>) -> Void) {
         Alamofire.request(url).responseJSON { responseData in
             completionHandler(responseData)

@@ -151,7 +151,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="jG9-JY-DC6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="15"/>
                                         <color key="textColor" red="0.32941176470588235" green="0.6470588235294118" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -161,7 +161,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="pji-9v-0BI"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -204,19 +204,19 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="IDZ-bN-Rhq">
                                         <rect key="frame" x="0.0" y="283.5" width="355" height="17"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO9-0F-ri0">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO9-0F-ri0">
                                                 <rect key="frame" x="0.0" y="0.0" width="204.5" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Année" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQw-Af-8jQ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Année" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQw-Af-8jQ">
                                                 <rect key="frame" x="239.5" y="0.0" width="41.5" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Durée" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTe-oT-m7R">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durée" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTe-oT-m7R">
                                                 <rect key="frame" x="316" y="0.0" width="39" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -258,6 +258,12 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Rfc-2o-e4V" firstAttribute="top" secondItem="vFf-W0-tOt" secondAttribute="bottom" constant="6" id="XVY-9w-NRI"/>
+                                    <constraint firstItem="Rfc-2o-e4V" firstAttribute="leading" secondItem="2dm-aD-cm9" secondAttribute="leading" id="aVz-9K-hEH"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rfc-2o-e4V" secondAttribute="bottom" id="kl6-OW-KUk"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rfc-2o-e4V" secondAttribute="trailing" id="y0g-F0-5T8"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eei-qv-lBX">
                                 <rect key="frame" x="284" y="92.5" width="50" height="50"/>
@@ -349,117 +355,115 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="D5M-gZ-nap">
-                                <rect key="frame" x="10" y="66" width="355" height="599"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="D5M-gZ-nap">
+                                <rect key="frame" x="10" y="64" width="355" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qui sommes-nous ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4J-uN-ftD">
-                                        <rect key="frame" x="0.0" y="0.0" width="153" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.3294117647" green="0.64705882349999999" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIZ-bX-yFZ">
-                                        <rect key="frame" x="0.0" y="36.5" width="343" height="330"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIZ-bX-yFZ">
+                                        <rect key="frame" x="0.0" y="20.5" width="355" height="300"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <mutableString key="text">Notre sélection de films anciens ou récents répond à des critères de qualité, sans frontières et sans partis pris.
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="dwi-4l-42B"/>
+                                        </constraints>
+                                        <string key="text">Notre sélection de films  répond à des critères de qualité, sans frontières et sans partis pris.
 
 Nous cultivons un esprit de convivialité à l'occasion d’évènements qui accompagnent certaines de nos séances. Chaque projection est précédée d'une courte introduction permettant de préciser le contexte du film. Elle est suivie d'un débat afin de partager nos émotions et exprimer nos différents points de vue. De plus, nous faisons régulièrement appel à des professionnels qui nous apportent un éclairage différent.
 
-En développant son partenariat avec plusieurs salles, le Film Club tout au long de l'année contribue à faire vivre la cinéphilie dans la ville du Festival, notamment  à la salle de La Licorne, à Miramar, à la MJC Picaud, au Raimu  ainsi qu’au Cinéma les Arcades et dans les salles du Cannet.
+En développant notre partenariat avec plusieurs salles, nous contribuons à faire vivre la cinéphilie dans la ville du Festival.
 
 CDCCC FILM CLUB DE CANNES
 6, rue Joseph Flory
 06150 Cannes la Bocca
-cdcccfilmclub@gmail.com-Tél : 06 89 65 41 05</mutableString>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+cdcccfilmclub@gmail.com-Tél : 06 89 65 41 05</string>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adhésion Film Club : 20 € - " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsA-JC-jFw">
-                                        <rect key="frame" x="0.0" y="382.5" width="190" height="18"/>
+                                        <rect key="frame" x="0.0" y="320.5" width="355" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.3294117647" green="0.64705882349999999" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(-25 ans) incluant 5 séances : 12,50 €" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KS8-PT-d9t">
-                                        <rect key="frame" x="0.0" y="416.5" width="214.5" height="14.5"/>
+                                        <rect key="frame" x="0.0" y="338.5" width="355" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.3294117647" green="0.64705882349999999" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wM4-he-owM">
-                                        <rect key="frame" x="0.0" y="447" width="343" height="78"/>
+                                        <rect key="frame" x="0.0" y="353" width="355" height="185"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="78" id="kMe-eP-Pg5"/>
-                                        </constraints>
-                                        <string key="text">L’adhésion vous permet de :• bénéficier d’un tarif avantageux aux soirées du Film Club• bénéficier de tarifs réduits dans les cinémas de Cannes• demander une accréditation au Festival de Cannes• participer aux Festivals de la Région</string>
+                                        <string key="text">L’adhésion vous permet de :
+• bénéficier d’un tarif avantageux aux soirées du Film Club
+• bénéficier de tarifs réduits dans les cinémas de Cannes
+• demander une accréditation au Festival de Cannes
+• participer aux Festivals de la Région</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fmK-tO-Jww">
-                                        <rect key="frame" x="0.0" y="541" width="345" height="21"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ckG-up-IJ7">
+                                        <rect key="frame" x="0.0" y="538" width="355" height="65"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopping-cart (1)" translatesAutoresizingMaskIntoConstraints="NO" id="kBT-9h-62Z">
-                                                <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
-                                                <color key="backgroundColor" red="0.3294117647" green="0.64705882349999999" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qus-td-Uuf">
-                                                <rect key="frame" x="21" y="0.0" width="324" height="21"/>
-                                                <color key="backgroundColor" red="0.3294117647" green="0.64705882349999999" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Adhésion en ligne">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="getAdhesionUrl:" destination="Yyr-cM-uvy" eventType="touchUpInside" id="XyF-Qt-4cX"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCp-hk-6Kj">
-                                        <rect key="frame" x="0.0" y="578" width="345" height="21"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="domain-registration (1)" translatesAutoresizingMaskIntoConstraints="NO" id="ahK-dE-I3P">
-                                                <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
-                                                <color key="backgroundColor" red="0.3294117647" green="0.64705882349999999" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1J-xf-7sk">
-                                                <rect key="frame" x="21" y="0.0" width="324" height="21"/>
-                                                <color key="backgroundColor" red="0.3294117647" green="0.64705882349999999" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Notre site Internet">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="getWebsiteUrl:" destination="Yyr-cM-uvy" eventType="touchUpInside" id="lfI-pi-dAf"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="fmK-tO-Jww">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopping-cart (1)" translatesAutoresizingMaskIntoConstraints="NO" id="kBT-9h-62Z">
+                                                        <rect key="frame" x="0.0" y="0.0" width="52" height="30"/>
+                                                        <color key="backgroundColor" red="0.3294117647" green="0.64705882349999999" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qus-td-Uuf">
+                                                        <rect key="frame" x="52" y="0.0" width="303" height="30"/>
+                                                        <color key="backgroundColor" red="0.3294117647" green="0.64705882349999999" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Adhésion en ligne">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="getAdhesionUrl:" destination="Yyr-cM-uvy" eventType="touchUpInside" id="XyF-Qt-4cX"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Ikc-hj-AAn"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="TCp-hk-6Kj">
+                                                <rect key="frame" x="0.0" y="35" width="355" height="30"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="domain-registration (1)" translatesAutoresizingMaskIntoConstraints="NO" id="ahK-dE-I3P">
+                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="30"/>
+                                                        <color key="backgroundColor" red="0.3294117647" green="0.64705882349999999" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1J-xf-7sk">
+                                                        <rect key="frame" x="51" y="0.0" width="304" height="30"/>
+                                                        <color key="backgroundColor" red="0.3294117647" green="0.64705882349999999" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Notre site Internet">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="getWebsiteUrl:" destination="Yyr-cM-uvy" eventType="touchUpInside" id="lfI-pi-dAf"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="fB8-wF-hSw"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="fmK-tO-Jww" secondAttribute="trailing" constant="10" id="6Ef-yt-sd2"/>
-                                    <constraint firstItem="SIZ-bX-yFZ" firstAttribute="top" secondItem="G4J-uN-ftD" secondAttribute="bottom" constant="16" id="SKx-4v-4rc"/>
-                                    <constraint firstAttribute="bottom" secondItem="TCp-hk-6Kj" secondAttribute="bottom" id="XBW-hf-Ynk"/>
-                                    <constraint firstItem="QsA-JC-jFw" firstAttribute="top" secondItem="SIZ-bX-yFZ" secondAttribute="bottom" constant="16" id="YZA-1b-XyC"/>
-                                    <constraint firstAttribute="trailing" secondItem="TCp-hk-6Kj" secondAttribute="trailing" constant="10" id="ZF9-bU-VcV"/>
-                                    <constraint firstItem="wM4-he-owM" firstAttribute="top" secondItem="KS8-PT-d9t" secondAttribute="bottom" constant="16" id="jT3-9l-b58"/>
-                                    <constraint firstItem="KS8-PT-d9t" firstAttribute="top" secondItem="QsA-JC-jFw" secondAttribute="bottom" constant="16" id="rLi-3V-Ldg"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="I9y-pY-JcM" firstAttribute="trailing" secondItem="QsA-JC-jFw" secondAttribute="trailing" constant="175" id="5yx-8o-WkD"/>
-                            <constraint firstItem="D5M-gZ-nap" firstAttribute="top" secondItem="I9y-pY-JcM" secondAttribute="top" constant="2" id="8JO-Zt-5Sm"/>
-                            <constraint firstItem="wM4-he-owM" firstAttribute="leading" secondItem="I9y-pY-JcM" secondAttribute="leading" constant="10" id="A5q-zP-MYf"/>
-                            <constraint firstItem="QsA-JC-jFw" firstAttribute="leading" secondItem="I9y-pY-JcM" secondAttribute="leading" constant="10" id="Miz-4S-MdN"/>
-                            <constraint firstItem="I9y-pY-JcM" firstAttribute="trailing" secondItem="SIZ-bX-yFZ" secondAttribute="trailing" constant="22" id="O2l-UA-L83"/>
-                            <constraint firstItem="D5M-gZ-nap" firstAttribute="leading" secondItem="I9y-pY-JcM" secondAttribute="leading" constant="10" id="OJa-K2-e2J"/>
-                            <constraint firstItem="SIZ-bX-yFZ" firstAttribute="leading" secondItem="I9y-pY-JcM" secondAttribute="leading" constant="10" id="R5u-uP-Y74"/>
-                            <constraint firstItem="I9y-pY-JcM" firstAttribute="trailing" secondItem="KS8-PT-d9t" secondAttribute="trailing" constant="150.5" id="Rlh-Ew-ehI"/>
-                            <constraint firstItem="I9y-pY-JcM" firstAttribute="bottom" secondItem="D5M-gZ-nap" secondAttribute="bottom" constant="2" id="Zsl-qi-sEH"/>
-                            <constraint firstItem="I9y-pY-JcM" firstAttribute="trailing" secondItem="D5M-gZ-nap" secondAttribute="trailing" constant="10" id="dDb-Pd-HI5"/>
-                            <constraint firstItem="I9y-pY-JcM" firstAttribute="trailing" secondItem="wM4-he-owM" secondAttribute="trailing" constant="22" id="ef6-my-sle"/>
-                            <constraint firstItem="KS8-PT-d9t" firstAttribute="leading" secondItem="I9y-pY-JcM" secondAttribute="leading" constant="10" id="xg9-hE-kOi"/>
+                            <constraint firstItem="I9y-pY-JcM" firstAttribute="trailing" secondItem="D5M-gZ-nap" secondAttribute="trailing" constant="10" id="bcJ-PE-r3N"/>
+                            <constraint firstItem="D5M-gZ-nap" firstAttribute="leading" secondItem="I9y-pY-JcM" secondAttribute="leading" constant="10" id="cA2-Sj-Rhk"/>
+                            <constraint firstItem="I9y-pY-JcM" firstAttribute="bottom" secondItem="D5M-gZ-nap" secondAttribute="bottom" id="t9l-oG-8eu"/>
+                            <constraint firstItem="D5M-gZ-nap" firstAttribute="top" secondItem="I9y-pY-JcM" secondAttribute="top" id="tSS-DY-1uD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I9y-pY-JcM"/>
                     </view>

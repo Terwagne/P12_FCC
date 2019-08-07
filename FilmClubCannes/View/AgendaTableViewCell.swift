@@ -7,12 +7,9 @@
 //
 
 import UIKit
-import FirebaseFirestore
 
 class AgendaTableViewCell: UITableViewCell {
-    
-    //MARK: Outlets
-   
+    // MARK: - Outlets
     @IBOutlet weak var afficheImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var directorLabel: UILabel!
@@ -20,21 +17,17 @@ class AgendaTableViewCell: UITableViewCell {
     @IBOutlet weak var placeLabel: UILabel!
     
     @IBOutlet weak var heureLabel: UILabel!
-    let db = Firestore.firestore()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-    //MARK: Properties
-    
+    // MARK: - Properties
     var mov: Movies? {
         didSet {
             titleLabel.text = mov?.title
@@ -49,17 +42,8 @@ class AgendaTableViewCell: UITableViewCell {
                 let data = try? Data(contentsOf: url)
                 DispatchQueue.main.async {
                     self.afficheImage.image = UIImage(data: data! as Data)
+                }
+            }
         }
     }
-    
 }
-}
-   
-//       func convertStringDateToDate(stringDate: String) -> Date {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "EEEE, dd MMMM yyyy"
-//        formatter.locale = Locale(identifier: "fr-FR")
-//        let dateFormatted: Date = formatter.date(from: stringDate)!
-//        return dateFormatted
-//        }
-    }

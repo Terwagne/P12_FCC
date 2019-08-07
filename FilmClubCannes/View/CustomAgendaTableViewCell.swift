@@ -10,15 +10,12 @@ import UIKit
 import FirebaseFirestore
 
 class CustomAgendaTableViewCell: UITableViewCell {
-    //MARK : Outlets
-    @IBOutlet weak var titleLabel: UILabel!
-    
-    @IBOutlet weak var directorLabel: UILabel!
-    
-    @IBOutlet weak var dateLabel: UILabel!
-    
-    @IBOutlet weak var placeLabel: UILabel!
-    
+// MARK: Outlets
+@IBOutlet weak var titleLabel: UILabel!
+@IBOutlet weak var directorLabel: UILabel!
+@IBOutlet weak var dateLabel: UILabel!
+@IBOutlet weak var placeLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -39,5 +36,3 @@ class CustomAgendaTableViewCell: UITableViewCell {
         }
     }
 }
-
-

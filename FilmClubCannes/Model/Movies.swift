@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Movies : Decodable {
-        let id : Int
+struct Movies: Decodable {
+        let id: Int
         let title: String
         let director: String
         let date: String
@@ -17,6 +17,4 @@ struct Movies : Decodable {
         let image: String
         let tmdb: Int
         let heure: String
-    
 }
-

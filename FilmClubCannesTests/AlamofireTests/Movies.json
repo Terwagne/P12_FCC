@@ -1,0 +1,53 @@
+{
+    "adult": false,
+    "backdrop_path": "/wS4DaBON5GtMdD3UQcVyqqKXGs9.jpg",
+    "belongs_to_collection": null,
+    "budget": 0,
+    "genres": [
+        {
+            "id": 18,
+            "name": "Drame"
+        }
+    ],
+    "homepage": "",
+    "id": 11703,
+    "imdb_id": "tt0089424",
+    "original_language": "en",
+    "original_title": "Kiss of the Spider Woman",
+    "overview": "Valentin, journaliste révolutionnaire, a été torturé et incarcéré pour ses convictions politiques dans une prison d'Amérique latine. Molina, décorateur homosexuel, est condamné pour une affaire de moeurs. Tout sépare ces deux hommes qu'on enferme dans la même cellule. Pour oublier la solitude de leurs nuits, Molina fait partager à Valentin les rêves qu'il imagine d'après les vieux films qui peuplent sa mémoire. Alors que l'animosité des deux détenus se transforme en amitié, une toile de trahison se tisse autour d'eux, inexorablement, mettant à l'épreuve leur confiance mutuelle et leur esprit de sacrifice…",
+    "popularity": 4.117,
+    "poster_path": "/drOwcZfIqWIFfJRrlXsKb7XIL0v.jpg",
+    "production_companies": [
+        {
+            "id": 2434,
+            "logo_path": null,
+            "name": "Hector Babenco Filmes",
+            "origin_country": "BR"
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "BR",
+            "name": "Brazil"
+        },
+        {
+            "iso_3166_1": "US",
+            "name": "United States of America"
+        }
+    ],
+    "release_date": "1985-07-26",
+    "revenue": 0,
+    "runtime": 120,
+    "spoken_languages": [
+        {
+            "iso_639_1": "pt",
+            "name": "Português"
+        }
+    ],
+    "status": "Released",
+    "tagline": "",
+    "title": "Le Baiser de la femme araignée",
+    "video": false,
+    "vote_average": 7.1,
+    "vote_count": 93
+}
