@@ -7,14 +7,16 @@
 //
 
 import UIKit
-import FirebaseFirestore
+//import Firebase
+
 class AgendaTableViewController: UIViewController {
     
     // MARK: Outlets
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     // MARK: - Properties
-    let decoder = JSONDecoder()
+    let firestoreService = FirebaseService()
     let apiServices = ApiServices()
     var apiMovieDetail: ApiMovieDetail?
     var mov: Movies?
@@ -30,25 +32,15 @@ class AgendaTableViewController: UIViewController {
     }
     
     func getMovies() {
-        let database = Firestore.firestore()
-        database.collection("movies").order(by: "id").getDocuments { (snapshot, error) in
-            if error != nil {
-                print ("error")
-            } else {
-                if let snapshot = snapshot {
-                    do {
-                        self.movies = try snapshot.decoded()
-                    } catch {
-                        print ("error")
-                    }
-                }
-                print(self.movies as Any)
-                
-                self.tableView.reloadData()
-                
-            }
+        self.toggleActivityIndicator(shown: true)
+        firestoreService.getMovies() { movies in
+            self.toggleActivityIndicator(shown: false)
+            self.movies = movies
+            print(self.movies as Any)
+            self.tableView.reloadData()
         }
     }
+    
     // MARK: - Animation
     func toggleActivityIndicator(shown: Bool) {
         activityIndicator.isHidden = !shown
@@ -109,5 +101,4 @@ extension AgendaTableViewController {
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alertVC, animated: true, completion: nil)
     }
-    
 }

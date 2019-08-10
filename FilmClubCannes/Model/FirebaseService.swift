@@ -8,8 +8,39 @@
 
 import Foundation
 import Firebase
-import FirebaseFirestore
-import FirebaseStorage
+
+//class FirebaseService {
+//    static let shared = FirebaseService()
+//    var database: Firestore?
+//    init() {
+////        FirebaseApp.configure()
+//        database = Firestore.firestore()
+//    }
+
+class FirebaseService {
+    let decoder = JSONDecoder()
+    var movies = [Movies]()
+    
+    func getMovies(completion: @escaping ([Movies]) -> Void) {
+        
+        let movieReference = Firestore.firestore().collection("movies").order(by: "id")
+        
+        movieReference.addSnapshotListener { (snapshot, _) in
+            guard let snapshot = snapshot else {return}
+            do {
+                
+                for _ in snapshot.documents {
+                    self.movies = try snapshot.decoded()
+                }
+                completion(self.movies)
+                
+            } catch {
+                print("error")
+            }
+            
+        }
+    }
+}
 
 extension QueryDocumentSnapshot {
     func decoded<Type: Decodable>() throws -> Type {

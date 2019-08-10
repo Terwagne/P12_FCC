@@ -19,6 +19,8 @@
 		CD2C5EA922F73AA500126320 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C5EA822F73AA500126320 /* LocationViewController.swift */; };
 		CD31785C22E89D2600A41CE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD31785B22E89D2600A41CE2 /* GoogleService-Info.plist */; };
 		CD31786022E8E64200A41CE2 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD31785F22E8E64200A41CE2 /* FirebaseService.swift */; };
+		CD33D88122FC35F600524136 /* CinemaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33D88022FC35F600524136 /* CinemaModel.swift */; };
+		CD33D88A22FE226700524136 /* CinemaModelTestsCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33D88922FE226700524136 /* CinemaModelTestsCase.swift */; };
 		CD50403822E7799A00D73990 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD50403722E7799A00D73990 /* AppDelegate.swift */; };
 		CD50403D22E7799A00D73990 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD50403B22E7799A00D73990 /* Main.storyboard */; };
 		CD50403F22E779A000D73990 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD50403E22E779A000D73990 /* Assets.xcassets */; };
@@ -63,6 +65,8 @@
 		CD2C5EA822F73AA500126320 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		CD31785B22E89D2600A41CE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD31785F22E8E64200A41CE2 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		CD33D88022FC35F600524136 /* CinemaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaModel.swift; sourceTree = "<group>"; };
+		CD33D88922FE226700524136 /* CinemaModelTestsCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaModelTestsCase.swift; sourceTree = "<group>"; };
 		CD50403422E7799A00D73990 /* FilmClubCannes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmClubCannes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD50403722E7799A00D73990 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD50403C22E7799A00D73990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,6 +157,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		CD33D88822FE223500524136 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				CD33D88922FE226700524136 /* CinemaModelTestsCase.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		CD50402B22E7799A00D73990 = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +203,7 @@
 		CD50404B22E779A000D73990 /* FilmClubCannesTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD33D88822FE223500524136 /* Location */,
 				CD2A041D22FAD836001E5B60 /* Extensions */,
 				CD2A041C22FAD5F6001E5B60 /* FirestoreTests */,
 				CD2A041122FABDB4001E5B60 /* AlamofireTests */,
@@ -209,6 +222,7 @@
 				CD50407B22E86E5600D73990 /* Movies.swift */,
 				CD31785F22E8E64200A41CE2 /* FirebaseService.swift */,
 				CD87536022EF576300C1B367 /* Extensions.swift */,
+				CD33D88022FC35F600524136 /* CinemaModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -448,6 +462,7 @@
 				CD50406A22E84BBF00D73990 /* ApiServices.swift in Sources */,
 				CD31786022E8E64200A41CE2 /* FirebaseService.swift in Sources */,
 				CD87535F22EC53E500C1B367 /* AgendaTableViewCell.swift in Sources */,
+				CD33D88122FC35F600524136 /* CinemaModel.swift in Sources */,
 				CD2C5EA922F73AA500126320 /* LocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +473,7 @@
 			files = (
 				CD2A041322FABE00001E5B60 /* FakeResponse.swift in Sources */,
 				CD2A041522FABE27001E5B60 /* FakeResponseData.swift in Sources */,
+				CD33D88A22FE226700524136 /* CinemaModelTestsCase.swift in Sources */,
 				CD2A041922FABF71001E5B60 /* ApiTestsCase.swift in Sources */,
 				CD2A041722FABEAA001E5B60 /* ApiSessionFake.swift in Sources */,
 				CD2A041F22FAD862001E5B60 /* ExtensionsTestsCase.swift in Sources */,
