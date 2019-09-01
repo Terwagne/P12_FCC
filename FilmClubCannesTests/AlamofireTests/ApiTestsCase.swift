@@ -41,7 +41,7 @@ class ApiTestsCase: XCTestCase {
         let apiService = ApiServices(apiSession: apiSessionFake)
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change ")
-        apiService.searchMovieDetail(id:11703) {(success, movies) in
+        apiService.searchMovieDetail(id: 11703) {(success, movies) in
             //Then
             XCTAssertFalse(success)
             XCTAssertNil(movies)
@@ -58,7 +58,7 @@ class ApiTestsCase: XCTestCase {
         let apiService = ApiServices(apiSession: apiSessionFake)
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change ")
-        apiService.searchMovieDetail(id: 11703){(success, movies) in
+        apiService.searchMovieDetail(id: 11703) { (success, movies) in
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(movies)

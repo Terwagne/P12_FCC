@@ -36,6 +36,8 @@
 		CD87535D22EBB14E00C1B367 /* AgendaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87535C22EBB14E00C1B367 /* AgendaTableViewController.swift */; };
 		CD87535F22EC53E500C1B367 /* AgendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87535E22EC53E500C1B367 /* AgendaTableViewCell.swift */; };
 		CD87536122EF576300C1B367 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87536022EF576300C1B367 /* Extensions.swift */; };
+		CDBDB6E7231C2419001D38F4 /* FirebaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDB6E6231C2419001D38F4 /* FirebaseProtocol.swift */; };
+		CDBDB6E9231C252A001D38F4 /* FirestoreTestsCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDB6E8231C252A001D38F4 /* FirestoreTestsCase.swift */; };
 		CF67ECBC81C029153A06FB84 /* Pods_FilmClubCannes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C25E5DB6C8A7829F5449E07 /* Pods_FilmClubCannes.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,8 @@
 		CD87535C22EBB14E00C1B367 /* AgendaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaTableViewController.swift; sourceTree = "<group>"; };
 		CD87535E22EC53E500C1B367 /* AgendaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaTableViewCell.swift; sourceTree = "<group>"; };
 		CD87536022EF576300C1B367 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CDBDB6E6231C2419001D38F4 /* FirebaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseProtocol.swift; sourceTree = "<group>"; };
+		CDBDB6E8231C252A001D38F4 /* FirestoreTestsCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreTestsCase.swift; sourceTree = "<group>"; };
 		D10061A607FD3818C2903FAC /* Pods-FilmClubCannesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmClubCannesTests.release.xcconfig"; path = "Target Support Files/Pods-FilmClubCannesTests/Pods-FilmClubCannesTests.release.xcconfig"; sourceTree = "<group>"; };
 		E1E7B4A6429DB5A01D3409EC /* Pods_FilmClubCannesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilmClubCannesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -145,6 +149,7 @@
 		CD2A041C22FAD5F6001E5B60 /* FirestoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				CDBDB6E8231C252A001D38F4 /* FirestoreTestsCase.swift */,
 			);
 			path = FirestoreTests;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				CD50406922E84BBF00D73990 /* ApiServices.swift */,
 				CD50407922E862FE00D73990 /* ApiMovieDetail.swift */,
 				CD50407B22E86E5600D73990 /* Movies.swift */,
+				CDBDB6E6231C2419001D38F4 /* FirebaseProtocol.swift */,
 				CD31785F22E8E64200A41CE2 /* FirebaseService.swift */,
 				CD87536022EF576300C1B367 /* Extensions.swift */,
 				CD33D88022FC35F600524136 /* CinemaModel.swift */,
@@ -453,6 +459,7 @@
 				CD50406622E7A62E00D73990 /* DetailAgendaViewController.swift in Sources */,
 				CD50407022E84CEC00D73990 /* ApiSession.swift in Sources */,
 				CD50407A22E862FE00D73990 /* ApiMovieDetail.swift in Sources */,
+				CDBDB6E7231C2419001D38F4 /* FirebaseProtocol.swift in Sources */,
 				CD87535D22EBB14E00C1B367 /* AgendaTableViewController.swift in Sources */,
 				CD87536122EF576300C1B367 /* Extensions.swift in Sources */,
 				CD50406E22E84C7900D73990 /* ApiProtocol.swift in Sources */,
@@ -471,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDBDB6E9231C252A001D38F4 /* FirestoreTestsCase.swift in Sources */,
 				CD2A041322FABE00001E5B60 /* FakeResponse.swift in Sources */,
 				CD2A041522FABE27001E5B60 /* FakeResponseData.swift in Sources */,
 				CD33D88A22FE226700524136 /* CinemaModelTestsCase.swift in Sources */,

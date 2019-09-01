@@ -30,14 +30,19 @@ class AgendaTableViewController: UIViewController {
         getMovies()
         tableView.reloadData()
     }
-    
+    /// methode to get movies from firebase
     func getMovies() {
         self.toggleActivityIndicator(shown: true)
-        firestoreService.getMovies() { movies in
-            self.toggleActivityIndicator(shown: false)
-            self.movies = movies
-            print(self.movies as Any)
-            self.tableView.reloadData()
+        firestoreService.getMovies { result in
+            switch result {
+            case .success(let movies):
+                self.movies = movies
+                self.toggleActivityIndicator(shown: false)
+                self.tableView.reloadData()
+                
+            case .failure:
+                print("error")
+            }
         }
     }
     
@@ -45,12 +50,12 @@ class AgendaTableViewController: UIViewController {
     func toggleActivityIndicator(shown: Bool) {
         activityIndicator.isHidden = !shown
     }
-    
+    // MARK: - Navigation
     func updateDetailAgenda(indexPath: IndexPath) {
         self.mov = movies?[indexPath.row]
         self.performSegue(withIdentifier: "movieDetail", sender: self)
     }
-    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let segueName = "movieDetail"
         if segue.identifier == segueName {
@@ -94,7 +99,7 @@ extension  AgendaTableViewController: UITableViewDataSource, UITableViewDelegate
         }
     }
 }
-
+// MARK: Alert
 extension AgendaTableViewController {
     func alert(message: String) {
         let alertVC = UIAlertController(title: "Error", message: message, preferredStyle: .alert)

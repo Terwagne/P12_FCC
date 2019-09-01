@@ -15,7 +15,8 @@ class ApiServices {
     }
     // MARK: Properties
     let apiKey = valueForAPIKey(named: "apiKey")
-    /// creation of the URL for the request
+    
+    /// Creation of the URL for the request
     func createSearchMovieDetailURL(id: Int) -> URL? {
         let urlString = "https://api.themoviedb.org/3/movie/\(id)?language=FR&api_key=\(apiKey)"
         guard let url = URL(string: urlString) else { return nil }

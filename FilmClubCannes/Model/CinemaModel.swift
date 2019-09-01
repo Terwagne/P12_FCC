@@ -10,6 +10,7 @@ import Foundation
 import MapKit
 import CoreLocation
 
+// MARK: Enum Cinema List
 enum Cinema: String {
     case licorne = "La Licorne"
     case raimu = "Raimu"
@@ -18,6 +19,7 @@ enum Cinema: String {
     case cinetoile = "Le Cinétoile"
     case canetoile = "Le Cannet Toiles"
     
+    // MARK: Properties
     private var deltaMeters: Double {
         return 1000
     }
@@ -25,7 +27,8 @@ enum Cinema: String {
         return coordinateRegion(center: coordinate)
         
     }
-     func coordinateRegion(center: CLLocationCoordinate2D) -> MKCoordinateRegion {
+    /// Methode to localize cinema and center localisation in the region with delta meters
+    func coordinateRegion(center: CLLocationCoordinate2D) -> MKCoordinateRegion {
         return MKCoordinateRegion(center: center, latitudinalMeters: deltaMeters, longitudinalMeters: deltaMeters)
     }
     var coordinate: CLLocationCoordinate2D {
@@ -44,6 +47,7 @@ enum Cinema: String {
             return CLLocationCoordinate2D(latitude: 43.576003, longitude: 7.017493)
         }
     }
+    /// Calculate properties for anotation
     var title: String {
         switch self {
         case .licorne:

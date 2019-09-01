@@ -23,12 +23,14 @@ class DetailAgendaViewController: UIViewController {
     @IBOutlet weak var dureeLabel: UILabel!
     @IBOutlet weak var synopsisTextView: UITextView!
     @IBOutlet weak var heureLabel: UILabel!
+    
     // MARK: Properties
     var apiServices = ApiServices()
     var apiMovieDetail: ApiMovieDetail?
     var movies: [Movies]?
     var mov: Movies?
     var newDate: Date?
+    
     override func viewDidLoad() {
         super .viewDidLoad()
     }
@@ -36,6 +38,8 @@ class DetailAgendaViewController: UIViewController {
         super.viewWillAppear(animated)
         displayMovie()
     }
+    
+    /// display movie
     func displayMovie() {
         print(mov as Any)
         guard let mov = mov else {return}
@@ -61,6 +65,8 @@ class DetailAgendaViewController: UIViewController {
             }
         }
     }
+    
+    /// Button that open calendar
     @IBAction func calendarButton(_ sender: UIButton) {
         guard let mov = mov else {return}
         newDate = mov.date.convertStringDateToDate(stringDate: mov.date)
@@ -69,7 +75,7 @@ class DetailAgendaViewController: UIViewController {
             addEventToCalendar(title: (mov.title), description: mov.place, startDate: newDate, endDate: newDate)
         }
     }
-    
+    /// methode for adding event to calendar
     func addEventToCalendar(title: String, description: String?,
                             startDate: Date, endDate: Date,
                             completion: ( (_ success: Bool, _ error: NSError?) -> Void)? = nil) {
@@ -104,10 +110,14 @@ class DetailAgendaViewController: UIViewController {
             })
         }
     }
+    /// Button to get the informations pratiques page
     @IBAction func getInformations(_ sender: Any) {
     }
+    
+    /// Button to open the map of location
     @IBAction func getLocation(_ sender: UIButton) {
     }
+    // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let segueName = "location"
         if segue.identifier == segueName {
@@ -117,7 +127,7 @@ class DetailAgendaViewController: UIViewController {
         }
     }
 }
-
+/// Extension to dismiss agenda
 extension DetailAgendaViewController: EKEventEditViewDelegate {
     func eventEditViewController(_ controller: EKEventEditViewController,
                                  didCompleteWith action: EKEventEditViewAction) {

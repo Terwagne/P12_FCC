@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-// MARK: - APIMovieDetail
+// MARK: - APIMovieDetail Model
 
 struct ApiMovieDetail: Decodable {
     let id: Int
@@ -37,4 +37,3 @@ struct ProductionCountry: Decodable {
         case name
     }
 }
-

@@ -1,5 +1,11 @@
 disabled_rules:
 - trailing_whitespace
+- type_name
+- variable_name
+- variable_name_min_length
+identifier_name:
+excluded:
+- id
 opt_in_rules:
 - empty_count
 - empty_string
@@ -10,7 +16,3 @@ ignores_urls: true
 excluded:
 - Pods
 - AppDelegate.swift
-- FilmClubCannes/Model/ApiMovieDetail.swift
-- FilmClubCannes/Model/Movies.swift
-- FilmClubCannes/Model/ApiServices.swift
-- FilmClubCannesTests/AlamofireTests/ApiTestsCase.swift

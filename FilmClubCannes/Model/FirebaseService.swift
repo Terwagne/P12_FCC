@@ -9,39 +9,26 @@
 import Foundation
 import Firebase
 
-//class FirebaseService {
-//    static let shared = FirebaseService()
-//    var database: Firestore?
-//    init() {
-////        FirebaseApp.configure()
-//        database = Firestore.firestore()
-//    }
-
-class FirebaseService {
+class FirebaseService: FirebaseProtocol {
     let decoder = JSONDecoder()
     var movies = [Movies]()
     
-    func getMovies(completion: @escaping ([Movies]) -> Void) {
-        
+    ///  Methode to get information from Firestore
+    func getMovies(result: @escaping (Result) -> Void) {
         let movieReference = Firestore.firestore().collection("movies").order(by: "id")
         
         movieReference.addSnapshotListener { (snapshot, _) in
             guard let snapshot = snapshot else {return}
             do {
-                
-                for _ in snapshot.documents {
-                    self.movies = try snapshot.decoded()
-                }
-                completion(self.movies)
-                
+                self.movies = try snapshot.decoded()
+                result(.success(self.movies))
             } catch {
-                print("error")
+                result(.failure(.offline))
             }
-            
         }
     }
 }
-
+// extensions to decode Json from firestore
 extension QueryDocumentSnapshot {
     func decoded<Type: Decodable>() throws -> Type {
         let jsonData = try JSONSerialization.data(withJSONObject: data(), options: [])
