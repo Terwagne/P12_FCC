@@ -27,6 +27,14 @@ class AgendaTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        titleLabel.text = ""
+        directorLabel.text = ""
+        heureLabel.text = ""
+        placeLabel.text = ""
+        afficheImage.image = nil
+    }
     // MARK: - Properties
     var mov: Movies? {
         didSet {

@@ -28,7 +28,9 @@ class AgendaTableViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         getMovies()
-        tableView.reloadData()
+         DispatchQueue.main.async {
+            self.tableView.reloadData()
+    }
     }
     /// methode to get movies from firebase
     func getMovies() {
@@ -65,6 +67,7 @@ class AgendaTableViewController: UIViewController {
             movieDetailVC!.mov = mov
         }
     }
+    
 }
 // MARK: - Table view data source
 extension  AgendaTableViewController: UITableViewDataSource, UITableViewDelegate {
@@ -80,11 +83,12 @@ extension  AgendaTableViewController: UITableViewDataSource, UITableViewDelegate
         cell.mov = movies[indexPath.row]
         return cell
     }
-    
+  
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        let id = movies![indexPath.row].tmdb
-        print("requestSearchForMoviesWithID")
+        guard let movies = movies else {return}
+        let id = movies[indexPath.row].tmdb
+     
         toggleActivityIndicator(shown: true)
         apiServices.searchMovieDetail(id: id) { (success, apiMovieDetail) in
             if success {
@@ -98,6 +102,7 @@ extension  AgendaTableViewController: UITableViewDataSource, UITableViewDelegate
             }
         }
     }
+    
 }
 // MARK: Alert
 extension AgendaTableViewController {
@@ -106,4 +111,5 @@ extension AgendaTableViewController {
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alertVC, animated: true, completion: nil)
     }
+    
 }

@@ -16,7 +16,7 @@ enum Cinema: String {
     case raimu = "Raimu"
     case picaud = "MJC Picaud"
     case arcades = "Les Arcades"
-    case cinetoile = "Le Cinétoile"
+    case cinetoile = "Cinétoile"
     case canetoile = "Le Cannet Toiles"
     
     // MARK: Properties

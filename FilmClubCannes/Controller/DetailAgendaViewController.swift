@@ -24,6 +24,7 @@ class DetailAgendaViewController: UIViewController {
     @IBOutlet weak var synopsisTextView: UITextView!
     @IBOutlet weak var heureLabel: UILabel!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     // MARK: Properties
     var apiServices = ApiServices()
     var apiMovieDetail: ApiMovieDetail?
@@ -37,6 +38,7 @@ class DetailAgendaViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         displayMovie()
+        activityIndicator.isHidden = true
     }
     
     /// display movie
@@ -68,6 +70,7 @@ class DetailAgendaViewController: UIViewController {
     
     /// Button that open calendar
     @IBAction func calendarButton(_ sender: UIButton) {
+        
         guard let mov = mov else {return}
         newDate = mov.date.convertStringDateToDate(stringDate: mov.date)
         print(newDate as Any)
@@ -80,6 +83,8 @@ class DetailAgendaViewController: UIViewController {
                             startDate: Date, endDate: Date,
                             completion: ( (_ success: Bool, _ error: NSError?) -> Void)? = nil) {
         DispatchQueue.main.async { () -> Void in
+            self.activityIndicator.isHidden = false
+            self.activityIndicator.startAnimating()
             let eventStore = EKEventStore()
             eventStore.requestAccess(to: .event, completion: { (granted, error) in
                 if (granted) && (error == nil) {
@@ -97,13 +102,14 @@ class DetailAgendaViewController: UIViewController {
                         return
                     }
                     completion?(true, nil)
-                    print("saveEvent")
+                   
                     let eventController = EKEventEditViewController()
                     eventController.event = event
                     eventController.eventStore = eventStore
                     eventController.editViewDelegate = self
                     self.present(eventController, animated: true, completion: nil)
-                    print(self.newDate as Any)
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.isHidden = true
                 } else {
                     completion?(false, error as NSError?)
                 }

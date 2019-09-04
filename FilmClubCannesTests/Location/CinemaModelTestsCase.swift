@@ -62,7 +62,7 @@ var region = MKCoordinateRegion()
     }
     
     func testCinemaCinéToile_whenThisLocationIsChoose_thenReturnGoodLocation() {
-        guard let cinema = Cinema(rawValue: "Le Cinétoile") else {return}
+        guard let cinema = Cinema(rawValue: "Cinétoile") else {return}
         region = cinema.regionPlace
         annotation.coordinate = cinema.coordinate
         annotation.title = cinema.title

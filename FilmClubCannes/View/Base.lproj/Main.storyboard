@@ -53,7 +53,7 @@
                                                 <constraint firstAttribute="width" constant="30" id="THr-SS-xNg"/>
                                                 <constraint firstAttribute="height" constant="30" id="dEQ-3B-5ea"/>
                                             </constraints>
-                                            <state key="normal" image="add"/>
+                                            <state key="normal" image="arrow-point-to-right (1)"/>
                                             <connections>
                                                 <action selector="calendarButton:" destination="BJj-Vc-hYh" eventType="touchUpInside" id="V4U-YO-GR1"/>
                                             </connections>
@@ -142,6 +142,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="t63-yp-WgA">
+                                <rect key="frame" x="197" y="348" width="20" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kSG-Ch-Q3x"/>
+                                </constraints>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2dm-aD-cm9">
                                 <rect key="frame" x="10" y="74" width="394" height="652"/>
                                 <subviews>
@@ -291,6 +297,7 @@
                         <constraints>
                             <constraint firstItem="Eei-qv-lBX" firstAttribute="centerY" secondItem="Cdm-tq-3AN" secondAttribute="centerY" id="1uL-Xx-vv2"/>
                             <constraint firstItem="2dm-aD-cm9" firstAttribute="top" secondItem="rAJ-oY-6fD" secondAttribute="top" constant="10" id="6AP-3w-gfq"/>
+                            <constraint firstItem="t63-yp-WgA" firstAttribute="centerY" secondItem="g56-YR-sZj" secondAttribute="centerY" id="8VY-Cu-7d4"/>
                             <constraint firstItem="rAJ-oY-6fD" firstAttribute="trailing" secondItem="2dm-aD-cm9" secondAttribute="trailing" constant="10" id="8yN-yY-bxL"/>
                             <constraint firstItem="tgm-wy-abM" firstAttribute="leading" secondItem="Cdm-tq-3AN" secondAttribute="trailing" constant="-130" id="Kpp-ar-Fwi"/>
                             <constraint firstItem="rAJ-oY-6fD" firstAttribute="bottom" secondItem="2dm-aD-cm9" secondAttribute="bottom" constant="10" id="Llo-0r-Ux5"/>
@@ -298,10 +305,12 @@
                             <constraint firstItem="tgm-wy-abM" firstAttribute="centerY" secondItem="Cdm-tq-3AN" secondAttribute="centerY" id="hpK-zp-o9A"/>
                             <constraint firstItem="2dm-aD-cm9" firstAttribute="leading" secondItem="rAJ-oY-6fD" secondAttribute="leading" constant="10" id="kaq-v3-hAg"/>
                             <constraint firstItem="Eei-qv-lBX" firstAttribute="leading" secondItem="Cdm-tq-3AN" secondAttribute="trailing" constant="-81" id="t6I-GZ-hnM"/>
+                            <constraint firstItem="t63-yp-WgA" firstAttribute="centerX" secondItem="g56-YR-sZj" secondAttribute="centerX" id="tci-x4-Kpe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rAJ-oY-6fD"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="t63-yp-WgA" id="3Kd-uG-R6F"/>
                         <outlet property="anneeLabel" destination="yQw-Af-8jQ" id="Zn5-67-tP9"/>
                         <outlet property="countryLabel" destination="cO9-0F-ri0" id="Mhe-Ox-aoi"/>
                         <outlet property="dateLabel" destination="Cdm-tq-3AN" id="t5b-FM-xK0"/>
@@ -318,7 +327,7 @@
             </objects>
             <point key="canvasLocation" x="-418.39999999999998" y="59.820089955022496"/>
         </scene>
-        <!--Location View Controller-->
+        <!--Localisation des salles-->
         <scene sceneID="Ue9-xr-Xes">
             <objects>
                 <viewController id="jCh-Vz-Bud" customClass="LocationViewController" customModule="FilmClubCannes" customModuleProvider="target" sceneMemberID="viewController">
@@ -339,6 +348,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gYh-jL-ugG"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Localisation des salles" id="iZX-5D-hnN"/>
                     <connections>
                         <outlet property="locationMap" destination="1zu-Nb-GFX" id="hPM-ZD-BKN"/>
                     </connections>
@@ -476,7 +486,7 @@ cdcccfilmclub@gmail.com-Tél : 06 89 65 41 05</string>
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="21" height="21"/>
+        <image name="arrow-point-to-right (1)" width="21" height="21"/>
         <image name="calendar-with-a-clock-time-tools" width="21" height="21"/>
         <image name="domain-registration (1)" width="21" height="21"/>
         <image name="information (1)" width="21" height="21"/>
